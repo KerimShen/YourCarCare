@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId = "com.kerim.yourcarcare"
-        minSdk = 37
+        minSdk = 26
         targetSdk = 37
         versionCode = 1
         versionName = "1.0"
@@ -37,6 +37,9 @@ dependencies {
     implementation(libs.appcompat)
     implementation(libs.constraintlayout)
     implementation(libs.material)
+    implementation(libs.room.runtime)
+    // Generates the DAO and database code at compile time
+    annotationProcessor(libs.room.compiler)
     testImplementation(libs.junit)
     androidTestImplementation(libs.espresso.core)
     androidTestImplementation(libs.ext.junit)
