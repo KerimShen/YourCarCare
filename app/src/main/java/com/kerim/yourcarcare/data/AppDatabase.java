@@ -11,6 +11,9 @@ import com.kerim.yourcarcare.model.Car;
 import com.kerim.yourcarcare.model.MaintenanceRecord;
 import com.kerim.yourcarcare.model.Vignette;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 /**
  * The app's Room database. Lists every table (entity) and gives access to the DAOs.
  * Increase "version" whenever you change an entity's fields.
@@ -29,6 +32,11 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract VignetteDao vignetteDao();
 
     public abstract MaintenanceRecordDao maintenanceRecordDao();
+
+    // Background threads for writes (insert/update/delete). Android doesn't allow
+    // database work on the main thread because it would freeze the screen.
+    // All repositories share this one pool of 2 threads.
+    public static final ExecutorService databaseExecutor = Executors.newFixedThreadPool(2);
 
     // Opening a database is expensive, so the whole app shares one instance (singleton).
     // "volatile" makes sure every thread sees the latest value of INSTANCE.

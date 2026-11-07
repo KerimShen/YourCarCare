@@ -1,5 +1,6 @@
 package com.kerim.yourcarcare.data;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -10,7 +11,7 @@ import com.kerim.yourcarcare.model.Vignette;
 
 import java.util.List;
 
-/** Database operations for vignettes. Call from a background thread. */
+/** Database operations for vignettes. Non-LiveData methods must run on a background thread. */
 @Dao
 public interface VignetteDao {
 
@@ -28,5 +29,5 @@ public interface VignetteDao {
 
     // Newest vignette first
     @Query("SELECT * FROM vignettes WHERE carId = :carId ORDER BY startDate DESC")
-    List<Vignette> getForCar(long carId);
+    LiveData<List<Vignette>> getForCar(long carId);
 }
