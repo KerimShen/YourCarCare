@@ -26,6 +26,15 @@
             android:exported="false"
             android:parentActivityName=".ui.CarListActivity"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.CarDetailActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.CarListActivity" />
+        <activity
+            android:name=".ui.AddEditMaintenanceRecordActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.CarDetailActivity"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>

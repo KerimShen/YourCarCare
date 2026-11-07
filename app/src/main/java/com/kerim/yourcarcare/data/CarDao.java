@@ -30,6 +30,11 @@ public interface CarDao {
     @Delete
     void delete(Car car);
 
+    // Sets the car's km to "km", but only if that is higher than what is stored now.
+    // Doing the comparison in SQL means we don't have to load the Car first.
+    @Query("UPDATE cars SET currentKm = :km WHERE id = :carId AND currentKm < :km")
+    void raiseCurrentKm(long carId, int km);
+
     // LiveData: observers are notified again every time the cars table changes
     @Query("SELECT * FROM cars ORDER BY brand, model")
     LiveData<List<Car>> getAll();

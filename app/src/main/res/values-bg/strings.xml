@@ -32,6 +32,30 @@
     <string name="error_km_negative">Пробегът не може да е отрицателен</string>
     <string name="error_invalid_number">Въведете валидно число</string>
 
+    <!-- Car details -->
+    <string name="action_edit">Редактирай</string>
+    <string name="detail_year">Година: %1$d</string>
+    <string name="detail_engine">Двигател: %1$s</string>
+    <string name="engine_with_turbo">%1$s, турбо</string>
+    <string name="detail_transmission">Скоростна кутия: %1$s</string>
+    <string name="detail_km">Пробег: %1$,d км</string>
+    <string name="detail_driving_style">Стил на шофиране: %1$s</string>
+    <string name="section_maintenance_history">История на поддръжката</string>
+    <string name="empty_maintenance">Все още няма записи за поддръжка. Натиснете +, за да добавите.</string>
+    <string name="add_record_description">Добави запис за поддръжка</string>
+    <string name="record_item_details">%1$s · %2$,d км</string>
+    <string name="delete_record_title">Изтриване на записа?</string>
+    <string name="delete_record_message">Записът „%1$s“ от %2$s ще бъде изтрит.</string>
+
+    <!-- Add / edit maintenance record form -->
+    <string name="title_add_record">Нов запис за поддръжка</string>
+    <string name="title_edit_record">Редактиране на запис</string>
+    <string name="hint_maintenance_type">Вид поддръжка</string>
+    <string name="hint_date">Дата</string>
+    <string name="hint_km">Пробег (км)</string>
+    <string name="hint_note">Бележка (по избор)</string>
+    <string name="error_date_future">Датата не може да е в бъдещето</string>
+
     <!-- Enum labels -->
     <string name="engine_type_petrol">Бензин</string>
     <string name="engine_type_diesel">Дизел</string>
