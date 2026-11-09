@@ -1,3 +1,71 @@
 <resources>
-    <string name="app_name">YourCarCare</string>
+    <!-- Brand name, same in every language -->
+    <string name="app_name" translatable="false">YourCarCare</string>
+
+    <!-- Screen titles -->
+    <string name="title_cars">My cars</string>
+    <string name="title_add_car">Add car</string>
+    <string name="title_edit_car">Edit car</string>
+
+    <!-- Car list -->
+    <string name="empty_cars">No cars yet. Tap + to add one.</string>
+    <string name="add_car_description">Add car</string>
+    <!-- Brand and model, e.g. "BMW 320d" -->
+    <string name="car_item_title" translatable="false">%1$s %2$s</string>
+    <!-- Year and mileage, e.g. "2015 · 185,000 km". %2$,d adds thousands separators -->
+    <string name="car_item_details">%1$d · %2$,d km</string>
+    <string name="delete_car_title">Delete car?</string>
+    <string name="delete_car_message">%1$s %2$s and all its vignettes and maintenance records will be deleted.</string>
+
+    <!-- Add / edit car form -->
+    <string name="hint_brand">Brand</string>
+    <string name="hint_model">Model</string>
+    <string name="hint_year">Year</string>
+    <string name="hint_engine_type">Engine type</string>
+    <string name="label_turbo">Turbo</string>
+    <string name="hint_transmission">Transmission</string>
+    <string name="hint_current_km">Current mileage (km)</string>
+    <string name="hint_driving_style">Driving style</string>
+
+    <!-- Buttons -->
+    <string name="action_save">Save</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_cancel">Cancel</string>
+
+    <!-- Validation errors -->
+    <string name="error_required">Required</string>
+    <string name="error_year_range">Enter a year between %1$d and %2$d</string>
+    <string name="error_km_negative">Mileage can\'t be negative</string>
+    <string name="error_invalid_number">Enter a valid number</string>
+
+    <!-- Enum labels -->
+    <string name="engine_type_petrol">Petrol</string>
+    <string name="engine_type_diesel">Diesel</string>
+    <string name="engine_type_hybrid">Hybrid</string>
+    <string name="engine_type_electric">Electric</string>
+
+    <string name="transmission_manual">Manual</string>
+    <string name="transmission_automatic">Automatic</string>
+
+    <string name="driving_style_very_gentle">Very gentle</string>
+    <string name="driving_style_gentle">Gentle</string>
+    <string name="driving_style_occasionally_hard">Occasionally hard</string>
+    <string name="driving_style_hard">Hard</string>
+
+    <string name="vignette_type_daily">Daily</string>
+    <string name="vignette_type_weekend">Weekend</string>
+    <string name="vignette_type_weekly">Weekly</string>
+    <string name="vignette_type_monthly">Monthly</string>
+    <string name="vignette_type_quarterly">Quarterly</string>
+    <string name="vignette_type_yearly">Yearly</string>
+
+    <string name="maintenance_type_oil_change">Oil change</string>
+    <string name="maintenance_type_air_filter">Air filter</string>
+    <string name="maintenance_type_cabin_filter">Cabin filter</string>
+    <string name="maintenance_type_spark_plugs">Spark plugs</string>
+    <string name="maintenance_type_brake_pads">Brake pads</string>
+    <string name="maintenance_type_brake_fluid">Brake fluid</string>
+    <string name="maintenance_type_coolant">Coolant</string>
+    <string name="maintenance_type_timing_belt">Timing belt</string>
+    <string name="maintenance_type_gearbox_oil">Gearbox oil</string>
 </resources>

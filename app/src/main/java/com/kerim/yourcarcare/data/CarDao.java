@@ -1,5 +1,6 @@
 package com.kerim.yourcarcare.data;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -12,7 +13,8 @@ import java.util.List;
 
 /**
  * Database operations for cars. Room writes the implementation for us.
- * Note: these methods block, so call them from a background thread, not the UI thread.
+ * Methods returning LiveData run in the background automatically.
+ * The other methods block, so call them through CarRepository, not from the UI thread.
  */
 @Dao
 public interface CarDao {
@@ -28,10 +30,11 @@ public interface CarDao {
     @Delete
     void delete(Car car);
 
+    // LiveData: observers are notified again every time the cars table changes
     @Query("SELECT * FROM cars ORDER BY brand, model")
-    List<Car> getAll();
+    LiveData<List<Car>> getAll();
 
-    // Returns null if there is no car with this id
+    // Emits null if there is no car with this id
     @Query("SELECT * FROM cars WHERE id = :id")
-    Car getById(long id);
+    LiveData<Car> getById(long id);
 }

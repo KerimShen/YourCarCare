@@ -38,6 +38,8 @@ dependencies {
     implementation(libs.constraintlayout)
     implementation(libs.material)
     implementation(libs.room.runtime)
+    implementation(libs.lifecycle.viewmodel)
+    implementation(libs.lifecycle.livedata)
     // Generates the DAO and database code at compile time
     annotationProcessor(libs.room.compiler)
     testImplementation(libs.junit)

@@ -1,0 +1,65 @@
+<resources>
+    <!-- Screen titles -->
+    <string name="title_cars">Моите коли</string>
+    <string name="title_add_car">Добавяне на кола</string>
+    <string name="title_edit_car">Редактиране на кола</string>
+
+    <!-- Car list -->
+    <string name="empty_cars">Все още нямате коли. Натиснете +, за да добавите.</string>
+    <string name="add_car_description">Добави кола</string>
+    <string name="car_item_details">%1$d · %2$,d км</string>
+    <string name="delete_car_title">Изтриване на колата?</string>
+    <string name="delete_car_message">%1$s %2$s и всички нейни винетки и записи за поддръжка ще бъдат изтрити.</string>
+
+    <!-- Add / edit car form -->
+    <string name="hint_brand">Марка</string>
+    <string name="hint_model">Модел</string>
+    <string name="hint_year">Година</string>
+    <string name="hint_engine_type">Тип двигател</string>
+    <string name="label_turbo">Турбо</string>
+    <string name="hint_transmission">Скоростна кутия</string>
+    <string name="hint_current_km">Текущ пробег (км)</string>
+    <string name="hint_driving_style">Стил на шофиране</string>
+
+    <!-- Buttons -->
+    <string name="action_save">Запази</string>
+    <string name="action_delete">Изтрий</string>
+    <string name="action_cancel">Отказ</string>
+
+    <!-- Validation errors -->
+    <string name="error_required">Задължително поле</string>
+    <string name="error_year_range">Въведете година между %1$d и %2$d</string>
+    <string name="error_km_negative">Пробегът не може да е отрицателен</string>
+    <string name="error_invalid_number">Въведете валидно число</string>
+
+    <!-- Enum labels -->
+    <string name="engine_type_petrol">Бензин</string>
+    <string name="engine_type_diesel">Дизел</string>
+    <string name="engine_type_hybrid">Хибрид</string>
+    <string name="engine_type_electric">Електрически</string>
+
+    <string name="transmission_manual">Ръчна</string>
+    <string name="transmission_automatic">Автоматична</string>
+
+    <string name="driving_style_very_gentle">Много спокоен</string>
+    <string name="driving_style_gentle">Спокоен</string>
+    <string name="driving_style_occasionally_hard">Понякога агресивен</string>
+    <string name="driving_style_hard">Агресивен</string>
+
+    <string name="vignette_type_daily">Дневна</string>
+    <string name="vignette_type_weekend">Уикенд</string>
+    <string name="vignette_type_weekly">Седмична</string>
+    <string name="vignette_type_monthly">Месечна</string>
+    <string name="vignette_type_quarterly">Тримесечна</string>
+    <string name="vignette_type_yearly">Годишна</string>
+
+    <string name="maintenance_type_oil_change">Смяна на масло</string>
+    <string name="maintenance_type_air_filter">Въздушен филтър</string>
+    <string name="maintenance_type_cabin_filter">Филтър за купето</string>
+    <string name="maintenance_type_spark_plugs">Запалителни свещи</string>
+    <string name="maintenance_type_brake_pads">Спирачни накладки</string>
+    <string name="maintenance_type_brake_fluid">Спирачна течност</string>
+    <string name="maintenance_type_coolant">Антифриз</string>
+    <string name="maintenance_type_timing_belt">Ангренажен ремък</string>
+    <string name="maintenance_type_gearbox_oil">Масло за скоростна кутия</string>
+</resources>
