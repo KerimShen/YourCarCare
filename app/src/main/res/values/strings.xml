@@ -38,6 +38,33 @@
     <string name="error_km_negative">Mileage can\'t be negative</string>
     <string name="error_invalid_number">Enter a valid number</string>
 
+    <!-- Car details -->
+    <string name="action_edit">Edit</string>
+    <string name="detail_year">Year: %1$d</string>
+    <string name="detail_engine">Engine: %1$s</string>
+    <!-- Engine type with turbo, e.g. "Diesel, turbo" -->
+    <string name="engine_with_turbo">%1$s, turbo</string>
+    <string name="detail_transmission">Transmission: %1$s</string>
+    <string name="detail_km">Mileage: %1$,d km</string>
+    <string name="detail_driving_style">Driving style: %1$s</string>
+    <string name="section_maintenance_history">Maintenance history</string>
+    <string name="empty_maintenance">No maintenance records yet. Tap + to add one.</string>
+    <string name="add_record_description">Add maintenance record</string>
+    <!-- Date and mileage of a record, e.g. "Nov 7, 2026 · 185,000 km" -->
+    <string name="record_item_details">%1$s · %2$,d km</string>
+    <string name="delete_record_title">Delete record?</string>
+    <!-- e.g. "Oil change from Nov 7, 2026 will be deleted." -->
+    <string name="delete_record_message">%1$s from %2$s will be deleted.</string>
+
+    <!-- Add / edit maintenance record form -->
+    <string name="title_add_record">Add maintenance</string>
+    <string name="title_edit_record">Edit maintenance</string>
+    <string name="hint_maintenance_type">Maintenance type</string>
+    <string name="hint_date">Date</string>
+    <string name="hint_km">Mileage (km)</string>
+    <string name="hint_note">Note (optional)</string>
+    <string name="error_date_future">Date can\'t be in the future</string>
+
     <!-- Enum labels -->
     <string name="engine_type_petrol">Petrol</string>
     <string name="engine_type_diesel">Diesel</string>

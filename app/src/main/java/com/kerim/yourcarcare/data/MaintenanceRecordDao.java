@@ -26,7 +26,7 @@ public interface MaintenanceRecordDao {
     void delete(MaintenanceRecord record);
 
     @Query("SELECT * FROM maintenance_records WHERE id = :id")
-    MaintenanceRecord getById(long id);
+    LiveData<MaintenanceRecord> getById(long id);
 
     // Full service history of a car, newest first
     @Query("SELECT * FROM maintenance_records WHERE carId = :carId ORDER BY date DESC")

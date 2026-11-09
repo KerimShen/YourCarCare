@@ -11,7 +11,6 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.appbar.MaterialToolbar;
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.kerim.yourcarcare.R;
 import com.kerim.yourcarcare.model.Car;
@@ -53,18 +52,13 @@ public class CarListActivity extends AppCompatActivity implements CarAdapter.OnC
 
     @Override
     public void onCarClick(Car car) {
-        Intent intent = new Intent(this, AddEditCarActivity.class);
-        intent.putExtra(AddEditCarActivity.EXTRA_CAR_ID, car.id);
+        Intent intent = new Intent(this, CarDetailActivity.class);
+        intent.putExtra(CarDetailActivity.EXTRA_CAR_ID, car.id);
         startActivity(intent);
     }
 
     @Override
     public void onCarLongClick(Car car) {
-        new MaterialAlertDialogBuilder(this)
-                .setTitle(R.string.delete_car_title)
-                .setMessage(getString(R.string.delete_car_message, car.brand, car.model))
-                .setPositiveButton(R.string.action_delete, (dialog, which) -> viewModel.delete(car))
-                .setNegativeButton(R.string.action_cancel, null)
-                .show();
+        ConfirmDialogs.deleteCar(this, car, () -> viewModel.delete(car));
     }
 }
