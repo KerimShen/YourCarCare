@@ -25,7 +25,7 @@ public interface VignetteDao {
     void delete(Vignette vignette);
 
     @Query("SELECT * FROM vignettes WHERE id = :id")
-    Vignette getById(long id);
+    LiveData<Vignette> getById(long id);
 
     // Newest vignette first
     @Query("SELECT * FROM vignettes WHERE carId = :carId ORDER BY startDate DESC")

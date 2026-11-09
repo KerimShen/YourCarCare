@@ -56,6 +56,31 @@
     <string name="hint_note">Бележка (по избор)</string>
     <string name="error_date_future">Датата не може да е в бъдещето</string>
 
+    <!-- Vignette card -->
+    <string name="section_vignette">Винетка</string>
+    <string name="vignette_none">Няма винетка</string>
+    <string name="vignette_valid_until">Валидна до %1$s</string>
+    <plurals name="vignette_days_left">
+        <item quantity="one">Остава %d ден</item>
+        <item quantity="other">Остават %d дни</item>
+    </plurals>
+    <string name="vignette_expires_today">Изтича днес</string>
+    <string name="vignette_starts_on">Започва на %1$s</string>
+    <string name="vignette_expired_on">Изтекла на %1$s</string>
+    <string name="action_add_vignette">Добави винетка</string>
+    <string name="action_show_history">История</string>
+    <string name="action_hide_history">Скрий историята</string>
+    <string name="delete_vignette_title">Изтриване на винетката?</string>
+    <string name="delete_vignette_message">„%1$s“ (%2$s) ще бъде изтрита.</string>
+
+    <!-- Add / edit vignette form -->
+    <string name="title_add_vignette">Нова винетка</string>
+    <string name="title_edit_vignette">Редактиране на винетка</string>
+    <string name="hint_vignette_type">Вид винетка</string>
+    <string name="hint_start_date">Начална дата</string>
+    <string name="error_start_too_far">Началната дата може да е най-много %1$d дни напред</string>
+    <string name="error_weekend_start">Уикенд винетката трябва да започва в петък, събота или неделя</string>
+
     <!-- Enum labels -->
     <string name="engine_type_petrol">Бензин</string>
     <string name="engine_type_diesel">Дизел</string>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Lighter versions so they are readable on a dark background -->
+    <color name="status_ok">#81C784</color>
+    <color name="status_warning">#FFB74D</color>
+</resources>

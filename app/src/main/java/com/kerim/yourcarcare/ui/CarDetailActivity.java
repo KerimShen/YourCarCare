@@ -16,10 +16,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.kerim.yourcarcare.R;
 import com.kerim.yourcarcare.model.Car;
 import com.kerim.yourcarcare.model.MaintenanceRecord;
+import com.kerim.yourcarcare.model.Vignette;
 
-/** Shows one car: a header with its data, then its maintenance history. */
+import java.time.LocalDate;
+
+/** Shows one car: a header with its data, its vignette, then its maintenance history. */
 public class CarDetailActivity extends AppCompatActivity
-        implements MaintenanceRecordAdapter.OnRecordClickListener {
+        implements MaintenanceRecordAdapter.OnRecordClickListener, VignetteAdapter.OnVignetteClickListener {
 
     /** Intent extra with the id of the car to show. Required. */
     public static final String EXTRA_CAR_ID = "com.kerim.yourcarcare.EXTRA_CAR_ID";
@@ -66,6 +69,21 @@ public class CarDetailActivity extends AppCompatActivity
             car = loadedCar;
             showCar(loadedCar);
         });
+
+        // Vignette section
+        VignetteCard vignetteCard = new VignetteCard(findViewById(R.id.section_vignette), this);
+        vignetteCard.setHistoryExpanded(viewModel.vignetteHistoryExpanded);
+        vignetteCard.setOnHistoryClickListener(v -> {
+            viewModel.vignetteHistoryExpanded = !viewModel.vignetteHistoryExpanded;
+            vignetteCard.setHistoryExpanded(viewModel.vignetteHistoryExpanded);
+        });
+        vignetteCard.setOnAddClickListener(v -> {
+            Intent intent = new Intent(this, AddEditVignetteActivity.class);
+            intent.putExtra(AddEditVignetteActivity.EXTRA_CAR_ID, carId);
+            startActivity(intent);
+        });
+        viewModel.getVignettes().observe(this,
+                vignettes -> vignetteCard.show(vignettes, LocalDate.now()));
 
         viewModel.getRecords().observe(this, records -> {
             adapter.submitList(records);
@@ -142,5 +160,18 @@ public class CarDetailActivity extends AppCompatActivity
     @Override
     public void onRecordLongClick(MaintenanceRecord record) {
         ConfirmDialogs.deleteRecord(this, record, () -> viewModel.deleteRecord(record));
+    }
+
+    @Override
+    public void onVignetteClick(Vignette vignette) {
+        Intent intent = new Intent(this, AddEditVignetteActivity.class);
+        intent.putExtra(AddEditVignetteActivity.EXTRA_CAR_ID, carId);
+        intent.putExtra(AddEditVignetteActivity.EXTRA_VIGNETTE_ID, vignette.id);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onVignetteLongClick(Vignette vignette) {
+        ConfirmDialogs.deleteVignette(this, vignette, () -> viewModel.deleteVignette(vignette));
     }
 }

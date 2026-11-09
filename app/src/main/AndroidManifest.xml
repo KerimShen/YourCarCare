@@ -35,6 +35,11 @@
             android:exported="false"
             android:parentActivityName=".ui.CarDetailActivity"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.AddEditVignetteActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.CarDetailActivity"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>

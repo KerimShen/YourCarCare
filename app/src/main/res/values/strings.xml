@@ -65,6 +65,34 @@
     <string name="hint_note">Note (optional)</string>
     <string name="error_date_future">Date can\'t be in the future</string>
 
+    <!-- Vignette card -->
+    <string name="section_vignette">Vignette</string>
+    <string name="vignette_none">No vignette</string>
+    <string name="vignette_valid_until">Valid until %1$s</string>
+    <plurals name="vignette_days_left">
+        <item quantity="one">%d day left</item>
+        <item quantity="other">%d days left</item>
+    </plurals>
+    <string name="vignette_expires_today">Expires today</string>
+    <string name="vignette_starts_on">Starts on %1$s</string>
+    <string name="vignette_expired_on">Expired on %1$s</string>
+    <string name="action_add_vignette">Add vignette</string>
+    <string name="action_show_history">History</string>
+    <string name="action_hide_history">Hide history</string>
+    <!-- Start and end date, e.g. "Nov 6, 2026 – Nov 12, 2026" -->
+    <string name="vignette_period" translatable="false">%1$s – %2$s</string>
+    <string name="delete_vignette_title">Delete vignette?</string>
+    <!-- e.g. "Weekly (Nov 6, 2026 – Nov 12, 2026) will be deleted." -->
+    <string name="delete_vignette_message">%1$s (%2$s) will be deleted.</string>
+
+    <!-- Add / edit vignette form -->
+    <string name="title_add_vignette">Add vignette</string>
+    <string name="title_edit_vignette">Edit vignette</string>
+    <string name="hint_vignette_type">Vignette type</string>
+    <string name="hint_start_date">Start date</string>
+    <string name="error_start_too_far">Start date can be at most %1$d days ahead</string>
+    <string name="error_weekend_start">A weekend vignette must start on Friday, Saturday or Sunday</string>
+
     <!-- Enum labels -->
     <string name="engine_type_petrol">Petrol</string>
     <string name="engine_type_diesel">Diesel</string>

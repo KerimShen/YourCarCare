@@ -2,4 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Vignette status colors (darker for light mode). Dark mode versions are in values-night -->
+    <color name="status_ok">#2E7D32</color>
+    <color name="status_warning">#E65100</color>
 </resources>

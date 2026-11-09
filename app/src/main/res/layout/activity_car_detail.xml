@@ -93,10 +93,15 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- ===== Section: vignette (layout in section_vignette.xml) ===== -->
+            <include
+                android:id="@+id/section_vignette"
+                layout="@layout/section_vignette" />
+
             <!--
                 ===== Add new sections here =====
-                (e.g. vignettes, maintenance suggestions)
-                Put them between the header card above and the maintenance history below.
+                (e.g. maintenance suggestions)
+                Put them between the vignette section above and the maintenance history below.
             -->
 
             <!-- ===== Section: maintenance history ===== -->

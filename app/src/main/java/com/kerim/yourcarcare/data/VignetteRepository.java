@@ -17,6 +17,10 @@ public class VignetteRepository {
         vignetteDao = AppDatabase.getInstance(application).vignetteDao();
     }
 
+    public LiveData<Vignette> getById(long id) {
+        return vignetteDao.getById(id);
+    }
+
     public LiveData<List<Vignette>> getForCar(long carId) {
         return vignetteDao.getForCar(carId);
     }
@@ -31,5 +35,14 @@ public class VignetteRepository {
 
     public void delete(Vignette vignette) {
         AppDatabase.databaseExecutor.execute(() -> vignetteDao.delete(vignette));
+    }
+
+    /** Inserts a new vignette (id is still 0) or updates an existing one. */
+    public void save(Vignette vignette) {
+        if (vignette.id == 0) {
+            insert(vignette);
+        } else {
+            update(vignette);
+        }
     }
 }

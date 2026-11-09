@@ -16,9 +16,7 @@ import com.kerim.yourcarcare.R;
 import com.kerim.yourcarcare.model.MaintenanceRecord;
 import com.kerim.yourcarcare.model.MaintenanceType;
 
-import java.time.Instant;
 import java.time.LocalDate;
-import java.time.ZoneOffset;
 
 /** One screen for both adding and editing a maintenance record. */
 public class AddEditMaintenanceRecordActivity extends AppCompatActivity {
@@ -116,7 +114,7 @@ public class AddEditMaintenanceRecordActivity extends AppCompatActivity {
 
         MaterialDatePicker<Long> picker = MaterialDatePicker.Builder.datePicker()
                 .setTitleText(R.string.hint_date)
-                .setSelection(toUtcMillis(viewModel.selectedDate))
+                .setSelection(Dates.toUtcMillis(viewModel.selectedDate))
                 .setCalendarConstraints(constraints)
                 .build();
         addDateListener(picker);
@@ -138,19 +136,9 @@ public class AddEditMaintenanceRecordActivity extends AppCompatActivity {
 
     private void addDateListener(MaterialDatePicker<Long> picker) {
         picker.addOnPositiveButtonClickListener(selection -> {
-            viewModel.selectedDate = fromUtcMillis(selection);
+            viewModel.selectedDate = Dates.fromUtcMillis(selection);
             showDate();
         });
-    }
-
-    // MaterialDatePicker works with milliseconds at midnight UTC, so we convert using UTC too.
-    // (Using the phone's time zone here could shift the date by one day.)
-    private static long toUtcMillis(LocalDate date) {
-        return date.atStartOfDay(ZoneOffset.UTC).toInstant().toEpochMilli();
-    }
-
-    private static LocalDate fromUtcMillis(long millis) {
-        return Instant.ofEpochMilli(millis).atZone(ZoneOffset.UTC).toLocalDate();
     }
 
     private void saveRecord() {
